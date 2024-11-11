@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Laptop Rental</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="#contact" class="nav-item">Contact Us</a></li>
+                <li><a href="cart.html" class="nav-item">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-item">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-detail">
+        <div class="product-image" id="productImage"></div>
+        <div class="product-specs" id="productSpecs"></div>
+    </main>
+
+    <footer>
+        <p>Contact Us: info@laptoprental.com</p>
+    </footer>
+
+    <script src="productDetails.js"></script>
+    <script>
+        displayProductDetails(); 
+    </script>
+</body>
+
+</html>

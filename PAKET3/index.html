@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian CAPIL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container2">
+        <h1>Antrian CAPIL</h1>
+        <div class="listAntrianPenduduk" id="listAntrianPenduduk"></div>
+    </div>
+
+    <div class="container1">
+        <p style="font-weight:900; font-size: 32px;">Registrasi Antrian</p>
+        <div>
+            <label for="inputPenduduk">Nama Penduduk</label>
+            <br>
+            <input id="inputPenduduk" type="text">
+        </div>
+        <div>
+            <label for="inputKTP">Nomor KTP</label>
+            <br>
+            <input type="tel" id="inputKTP">
+        </div>
+        <div>
+            <p style="display: inline;">Pilih Keperluan</p>
+            <br>
+            <select id="selectKeperluan">
+                <option selected hidden disabled>----- Select here ------</option>
+                <option value="Rekam KTP">Rekam KTP</option>
+                <option value="Cetak KK">Cetak KK</option>
+                <option value="Akta Kelahiran">Akta Kelahiran</option>
+            </select>
+        </div>
+        <button type="button" onclick="tambahAntrian()">Tambah Antrian</button>
+    </div>
+    <script src="paket3.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Rental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Laptop Rental</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-item">Home</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="#contact" class="nav-item">Contact Us</a></li>
+                <li><a href="profile.html" class="nav-item">Profile</a></li>
+                <li><a href="cart.html" class="nav-item">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Explore Our Laptops</h1>
+        
+        <!-- Search and Filter Section -->
+        <div class="filter-bar">
+            <input type="text" id="search" placeholder="Search laptops..." oninput="filterProducts()" class="search-box">
+            
+            <select id="brandFilter" onchange="filterProducts()" class="filter-select">
+                <option value="">All Brands</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="Asus">Asus</option>
+                <option value="Huawei">Huawei</option>
+                <option value="MSI">MSI</option>
+            </select>
+            
+            <select id="sortOptions" onchange="filterProducts()" class="filter-select">
+                <option value="name">Sort by Name</option>
+                <option value="priceLow">Price Low to High</option>
+                <option value="priceHigh">Price High to Low</option>
+            </select>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-btn left-btn" onclick="slideProducts(-1)">◀</button>
+            <div class="carousel" id="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Product items will be inserted here dynamically -->
+                </div>
+            </div>
+            <button class="carousel-btn right-btn" onclick="slideProducts(1)">▶</button>
+        </div>
+        
+        
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact Us: info@laptoprental.com</p>
+    </footer>
+
+    <script src="appHome.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+LAPTOP rental
+
+	halaman Utama >>	
+		- daftar mobil dinamis sesuai data dalam array, 
+		- produk populer mengambil data dari array listLaptop yang memiliki rating 5
+		- fitur sort ( berdasarkan A - Z, Harga terendah, harga Tertinggi )
+		- fitur Filter ( filter berdasarkan brand asus, MSI, Lenovo, Dell, Huawei )
+		- fitur search nama laptop,
+		- Bagi Laptop dengan status false dalam array, pada halaman web ditampilkan tulisan Sorry Currently Unavailable
+		
+
+
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use a modern sans-serif font */
+    background-color: #101010; /* Dark background for a gaming feel */
+    color: #ffffff; /* White text for contrast */
+}
+
+header {
+    background-color: #000; /* Solid black for header */
+    color: #ffffff;
+    padding: 1rem 0;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem; /* Larger font size for emphasis */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid #444; /* Subtle border for separation */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4c00; /* ROG theme color */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links .nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: color 0.3s, background 0.3s;
+}
+
+.nav-links .nav-item:hover {
+    color: #ff4c00; /* ROG theme hover color */
+    background-color: rgba(255, 76, 0, 0.1); /* Light hover background */
+    border-radius: 5px;
+}
+
+/* Filter Bar Styles */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.search-box, .filter-select {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #444; /* Dark border */
+    border-radius: 5px;
+    background-color: #222; /* Dark background for inputs */
+    color: #ffffff; /* White text */
+    transition: all 0.3s;
+}
+
+.search-box:focus, .filter-select:focus {
+    border-color: #ff4c00; /* Highlight on focus */
+    outline: none;
+}
+
+/* Product List Styles */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.product-item {
+    background: #333; /* Darker background for product items */
+    padding: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 8px rgba(255, 76, 0, 0.5); /* ROG glow effect */
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Button Styles */
+button {
+    background-color: #ff4c00; /* ROG theme color */
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e07b00; /* Darker shade on hover */
+}
+
+/* Profile Page Styles */
+.profile-page {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.profile-info, .rental-history {
+    background: #222; /* Dark background for profile sections */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/* Cart Page Styles */
+#cart {
+    padding: 20px;
+    background: #222; /* Dark background for cart */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 76, 0, 0.5);
+    margin-top: 20px;
+}
+
+#cartItems p, #historyItems p {
+    margin: 5px 0;
+    color: #ffffff; /* White text for cart items */
+}
+
+#totalPrice {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Purchase History */
+#purchaseHistory {
+    border: 1px solid #444;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #222;
+    border-radius: 5px;
+}
